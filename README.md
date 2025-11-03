@@ -40,7 +40,7 @@ Records all individual order transactions and links each order to the correspond
 
 ---
 
-## 📊 Insights You Can Derive
+## 📊 Insights
 
 - Top 10 most ordered menu items  
 - Most popular cuisine categories  
