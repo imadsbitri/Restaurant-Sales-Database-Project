@@ -75,14 +75,14 @@ ORDER BY price DESC
 LIMIT 1;
 ```
 
-###🍝 2. Find the Average Price per Category
+### 🍝 2. Find the Average Price per Category
 ```sql
 SELECT category,
        ROUND(AVG(price), 2) AS average_price
 FROM menu_items
 GROUP BY category
 ORDER BY average_price DESC;
-'''
+```
 
 ### 💰 3. Top 5 Highest-Spending Orders
 ```sql
@@ -93,7 +93,7 @@ JOIN menu_items mi ON od.item_id = mi.menu_item_id
 GROUP BY od.order_id
 ORDER BY total_spent DESC
 LIMIT 5;
-'''
+```
 
 ###  📦 4. Most Ordered Menu Items by Category
 ```sql
@@ -104,4 +104,4 @@ FROM order_details od
 JOIN menu_items mi ON od.item_id = mi.menu_item_id
 GROUP BY mi.category, mi.item_name
 ORDER BY times_ordered DESC;
-'''
+```
