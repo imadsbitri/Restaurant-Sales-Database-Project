@@ -2,7 +2,7 @@
 
 ## 📖 Project Overview
 This project builds a **relational SQL database** for a restaurant management system, designed to track menu items, customer orders, and sales activity.  
-It simulates real-world restaurant operations, allowing data analysts and business users to query insights like:
+It simulates restaurant operations, allowing data analysts and business users to query insights like:
 - Best-selling menu items  
 - Revenue by category (American, Asian, Mexican, Italian, etc.)  
 - Order frequency by time or date  
