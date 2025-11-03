@@ -73,7 +73,7 @@ SELECT
 FROM menu_items
 ORDER BY price DESC
 LIMIT 1;
-'''
+```
 
 ###🍝 2. Find the Average Price per Category
 ```sql
