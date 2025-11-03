@@ -58,8 +58,50 @@ Records all individual order transactions and links each order to the correspond
 
 ---
 
-## 🚀 How to Use
+## 📈 Example Query
 
-1. Clone this repository  
-   ```bash
-   git clone https://github.com/yourusername/restaurant-sales-db.git
+### 🥇 1. Find the Most Expensive and Least Expensive Items
+```sql
+SELECT 
+    item_name, category, price
+FROM menu_items
+ORDER BY price ASC
+LIMIT 1;
+
+SELECT 
+    item_name, category, price
+FROM menu_items
+ORDER BY price DESC
+LIMIT 1;
+'''
+
+###🍝 2. Find the Average Price per Category
+```sql
+SELECT category,
+       ROUND(AVG(price), 2) AS average_price
+FROM menu_items
+GROUP BY category
+ORDER BY average_price DESC;
+'''
+
+### 💰 3. Top 5 Highest-Spending Orders
+```sql
+SELECT od.order_id,
+       ROUND(SUM(mi.price), 2) AS total_spent
+FROM order_details od
+JOIN menu_items mi ON od.item_id = mi.menu_item_id
+GROUP BY od.order_id
+ORDER BY total_spent DESC
+LIMIT 5;
+'''
+
+###  📦 4. Most Ordered Menu Items by Category
+```sql
+SELECT mi.category,
+       mi.item_name,
+       COUNT(od.item_id) AS times_ordered
+FROM order_details od
+JOIN menu_items mi ON od.item_id = mi.menu_item_id
+GROUP BY mi.category, mi.item_name
+ORDER BY times_ordered DESC;
+'''
